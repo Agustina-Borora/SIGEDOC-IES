@@ -1,6 +1,8 @@
 
 package principal;
 
+import javax.swing.JFrame;
+
 
 public class Login extends javax.swing.JFrame {
 
@@ -51,6 +53,11 @@ public Login() {
         });
 
         btnIniciarSesion.setText("Iniciar Sesion");
+        btnIniciarSesion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnIniciarSesionActionPerformed(evt);
+            }
+        });
 
         lblBienvenido.setFont(new java.awt.Font("SansSerif", 1, 28)); // NOI18N
         lblBienvenido.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,11 +126,26 @@ public Login() {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtPasswordActionPerformed
 
+    private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
+         // 1. Crear la instancia de la ventana del menu
+        Menu Principal = new Menu(); 
+ 
+        // 2. Hacer visible el Menu
+        Principal.setVisible(true); 
+ 
+        // 3. Cerrar la ventana de Login actual 
+        this.dispose(); 
+   
+    }//GEN-LAST:event_btnIniciarSesionActionPerformed
+
    
 public static void main(String args[]) {
     // 1. Configurar FlatLaf antes de iniciar la interfaz (puedes usar FlatDarkLaf o FlatLightLaf)
     com.formdev.flatlaf.FlatDarkLaf.setup();
-    
+    // (Opcional recomendado) Activar propiedades globales para bordes redondeados
+    // FlatLaf soporta bordes suaves y estilo moderno por defecto si se configuran UIManager:
+    javax.swing.UIManager.put("Component.arc", 15); // Radio de redondeo general
+    javax.swing.UIManager.put("TextComponent.arc", 15);
     java.awt.EventQueue.invokeLater(new Runnable() {
         public void run() {
             new Login().setVisible(true);

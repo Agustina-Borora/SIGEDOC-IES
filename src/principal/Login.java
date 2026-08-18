@@ -128,7 +128,7 @@ public Login() {
 
     private void btnIniciarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciarSesionActionPerformed
          // 1. Crear la instancia de la ventana del menu
-        Menu Principal = new Menu(); 
+      Principal Principal = new Principal(); 
  
         // 2. Hacer visible el Menu
         Principal.setVisible(true); 
